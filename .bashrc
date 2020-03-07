@@ -51,22 +51,12 @@ if [[ -d "$HOME/.local/bin" ]]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-#==> To run fbterm as a non-root user, do:
-#sudo gpasswd -a YOUR_USERNAME video
-#==> To enable keyboard shortcuts for non-root users, do:
-#sudo setcap 'cap_sys_tty_config+ep' /usr/bin/fbterm
-#or
-#sudo chmod u+s /usr/bin/fbterm
 if [[ "`tty`" == /dev/tty* || ${SHLVL} -eq 2 ]]; then
     export TERM=fbterm
     if [[ ${SHLVL} -eq 1 ]]; then
         ((SHLVL+=1)); export SHLVL
         exec fbterm "$@"
     fi
-fi
-
-if [[ -f /usr/local/bin/powerline/powerline/bindings/bash/powerline.sh ]]; then
-    source /usr/local/bin/powerline/powerline/bindings/bash/powerline.sh
 fi
 
 if [[ -z "$SSH_CLIENT" ]] || [[ -z "$SSH_TTY" ]]; then
@@ -81,15 +71,10 @@ fi
 
 export POWERLINE_COMMAND=powerline
 export POWERLINE_CONFIG_COMMAND=powerline-config
-#POWERLINE_BASH_CONTINUATION=1
-#POWERLINE_BASH_SELECT=1
-#. /usr/local/bin/powerline/powerline/bindings/bash/powerline.sh
-
-#source ~/bin/extras/bash_utils.sh
 
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+  . /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
