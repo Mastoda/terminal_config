@@ -32,6 +32,7 @@ after this you can:
 ```bash
 source ~/.bashrc
 ```
+powerline default theme does not show git status anymore so use default_leftonly by moving config.json into yours ~/.config/powerline/config.json
 
 #### 2. Vim
 
