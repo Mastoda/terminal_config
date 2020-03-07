@@ -1,5 +1,6 @@
 # terminal_config
-This is my terminal configuration to work with tmux, powerline, tty, fbterm
+This is my terminal configuration to work with tmux, powerline, tty, fbterm.
+
 And my vimrc also
 
 ### STEPS:
