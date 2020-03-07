@@ -12,20 +12,20 @@ I could not find tmux/powerline.conf in the powerline installed by package manag
 
 Then you can run:
 ```bash
-$ sudo PACKAGE_MANAGER install fbterm python-pip
-$ sudo pip install git+git://github.com/Lokaltog/powerline
+sudo PACKAGE_MANAGER install fbterm python-pip
+sudo pip install git+git://github.com/Lokaltog/powerline
 ```
 After that you can run fbterm as a non-root user, do:
 ```bash
-$ sudo gpasswd -a YOUR_USERNAME video
+sudo gpasswd -a YOUR_USERNAME video
 ```
 To enable keyboard shortcuts for non-root users, do:
 ```bash
-$ sudo setcap 'cap_sys_tty_config+ep' /usr/bin/fbterm
+sudo setcap 'cap_sys_tty_config+ep' /usr/bin/fbterm
 ```
 or
 ```bash
-$ sudo chmod u+s /usr/bin/fbterm
+sudo chmod u+s /usr/bin/fbterm
 ```
 
 after this you can:
